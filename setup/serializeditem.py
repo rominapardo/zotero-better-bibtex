@@ -148,6 +148,7 @@ with open(os.path.join(root, 'gen/typings/serialized-item.d.ts'), 'w') as typing
   for fieldName in 'uri referenceType cslType cslVolumeTitle citekey'.split(' '):
     addfield(fieldName, 'string')
   addfield('collections', 'string[]')
+  addfield('relations', "{ 'dc:relation': string[] }")
 
   addfield('extraFields', textwrap.dedent('''
     {

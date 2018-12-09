@@ -283,7 +283,7 @@ Zotero.Translate.Export.prototype.Sandbox.BetterBibTeX = {
 
   related(sandbox, keys) {
     return KeyManager.keys.find({ itemKey: { $in: keys } }).map(key => key.citekey)
-  }
+  },
 }
 
 Zotero.Translate.Import.prototype.Sandbox.BetterBibTeX = {
