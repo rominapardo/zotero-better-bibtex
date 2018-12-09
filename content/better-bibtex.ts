@@ -280,7 +280,12 @@ Zotero.Translate.Export.prototype.Sandbox.BetterBibTeX = {
 
     return true
   },
+
+  related(sandbox, keys) {
+    return KeyManager.keys.find({ itemKey: { $in: keys } }).map(key => key.citekey)
+  }
 }
+
 Zotero.Translate.Import.prototype.Sandbox.BetterBibTeX = {
   debugEnabled(sandbox) { return Zotero.Debug.enabled },
   version(sandbox) { return { Zotero: ZoteroConfig.Zotero, BetterBibTeX: require('../gen/version.js') } },

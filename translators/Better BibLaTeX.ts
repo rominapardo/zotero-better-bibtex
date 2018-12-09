@@ -573,6 +573,9 @@ Translator.doExport = () => {
       }
     }
 
+    const related = Zotero.BetterBibTeX.related((item.relations ? (item.relations['dc:relation'] || []) : []).map(url => url.split('/').pop()))
+    ref.add({ name: 'related', value: related.join(', ') })
+
     ref.complete()
   }
 
